@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Саша Крылова — резюме</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f2ef;
+            color: #1a1a1a;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 2rem 2rem 1.5rem 2rem;
+            background: #ffffff;
+            border-bottom: 1px solid #eae6e1;
+        }
+
+        .photo {
+            flex-shrink: 0;
+        }
+
+        .photo img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #e0d6cc;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+        }
+
+        .title-section {
+            flex: 1;
+        }
+
+        .title-section h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+            color: #2c2b28;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #5e5b56;
+            font-style: italic;
+            margin-bottom: 1rem;
+            border-left: 3px solid #c7b59b;
+            padding-left: 1rem;
+        }
+
+        .salary {
+            display: inline-block;
+            background: #f0ede8;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #2c5f2d;
+            margin-top: 0.5rem;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+
+        .sidebar {
+            background: #faf8f5;
+            padding: 1.8rem 1.8rem 2rem 1.8rem;
+            border-right: 1px solid #eae2da;
+        }
+
+        .right-col {
+            padding: 1.8rem 2rem 2rem 1.8rem;
+            background: white;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: #8b7a66;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e2d9d0;
+            padding-bottom: 0.4rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #e9e4dd;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #3b3a37;
+        }
+
+        .links-list {
+            list-style: none;
+        }
+
+        .links-list li {
+            margin-bottom: 0.6rem;
+        }
+
+        .links-list a {
+            text-decoration: none;
+            color: #2c5f2d;
+            font-weight: 500;
+            word-break: break-all;
+            transition: 0.2s;
+            border-bottom: 1px dotted transparent;
+        }
+
+        .links-list a:hover {
+            border-bottom-color: #2c5f2d;
+        }
+
+        .job {
+            margin-bottom: 1.8rem;
+        }
+
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.3rem;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #1f2e1c;
+        }
+
+        .company {
+            font-weight: 600;
+            color: #6b5a48;
+        }
+
+        .period {
+            font-size: 0.8rem;
+            color: #8f897f;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .job-desc {
+            font-size: 0.9rem;
+            color: #2e2c29;
+            margin-top: 0.4rem;
+            padding-left: 0.2rem;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+        }
+
+        .badge {
+            background: #ece4db;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 16px;
+            font-weight: 500;
+            color: #4b3a2a;
+        }
+
+        .education-item {
+            margin-bottom: 1rem;
+        }
+
+        .edu-title {
+            font-weight: 700;
+        }
+
+        .hobby {
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            background: #f3efe9;
+            padding: 0.8rem 1rem;
+            border-radius: 20px;
+        }
+
+        hr {
+            margin: 1rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, #e2d9d0, transparent);
+        }
+
+        @media (max-width: 780px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: 0;
+                border-bottom: 1px solid #eae2da;
+            }
+            .hero {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .tagline {
+                text-align: left;
+            }
+            .title-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="photo">
+            <img src="https://raw.githubusercontent.com/sana64/about_me/main/m1.png" alt="Саша Крылова">
+        </div>
+        <div class="title-section">
+            <h1>Саша Крылова</h1>
+            <div class="tagline">быстро учусь, вовремя забываю</div>
+            <div class="salary">от 64 000 ₽</div>
+        </div>
+    </div>
+
+    <div class="main-grid">
+        <div class="sidebar">
+            <div class="section">
+                <h3>Навыки</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">Рисование от руки</span>
+                    <span class="skill-tag">Описание бизнес-процессов</span>
+                    <span class="skill-tag">Mac</span>
+                    <span class="skill-tag">Обработка изображений</span>
+                    <span class="skill-tag">Bash</span>
+                    <span class="skill-tag">Ubuntu</span>
+                    <span class="skill-tag">Допечатная подготовка</span>
+                    <span class="skill-tag">Adobe InDesign</span>
+                    <span class="skill-tag">Corel Draw</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Сайты / проекты</h3>
+                <ul class="links-list">
+                    <li><a href="https://sana64.github.io/umka-v-saratove/" target="_blank">концерт: Умка в Саратове</a></li>
+                    <li><a href="https://sana64.github.io/Be-bold/" target="_blank">выставка: Be bold</a></li>
+                    <li><a href="https://sana64.github.io/Chess960/" target="_blank">игры: Chess960</a> / <a href="https://sana64.github.io/tet/" target="_blank">tetris</a></li>
+                    <li><a href="https://sana64.github.io/driedsun/" target="_blank">травница: driedsun</a></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Рисование</h3>
+                <ul class="links-list">
+                    <li><a href="https://vk.link/tograyscale" target="_blank">раскраски</a></li>
+                    <li><a href="https://ru.pinterest.com/sana64krylova/_pins/" target="_blank">Pinterest</a></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Образование</h3>
+                <div class="education-item">
+                    <div class="edu-title">СГТУ им. Ю.А. Гагарина</div>
+                    <div>ФЭТиП, 2000–2006</div>
+                    <div style="font-size: 0.8rem; color:#5a5349;">Диплом: "Разработка параллельного алгоритма LU-разложения матрицы"</div>
+                </div>
+                <div class="education-item">
+                    <div class="edu-title">Дополнительно</div>
+                    <div>ranepa — вёрстка HTML и JS (2024)</div>
+                    <div>Фонд защиты гласности — школа журналистики (2010–2011)</div>
+                    <div>СГТУ — издательские технологии (2002–2003)</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Обо мне</h3>
+                <div style="font-size: 0.9rem;">
+                    вдохновляют горизонтальное управление, масштабируемость, процедурное рисование, L‑system, анализ структуры сообществ, визуализация социальных графов, open source.<br>
+                    нравится делать сайты без мышки, рисовать карандашом, планшетом и буквами.
+                </div>
+                <div class="hobby">
+                    хобби: мулине, стихи Киплинга, жизнь в лесах
+                </div>
+            </div>
+        </div>
+
+        <div class="right-col">
+            <div class="section">
+                <h3>Опыт работы</h3>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div><span class="job-title">Web мастер</span> • <span class="company">LangRu</span></div>
+                        <div class="period">ноя 2022 — настоящее время</div>
+                    </div>
+                    <div class="job-desc">
+                        Создание сайтов, бизнес-плана, анализ существующего контента.
+                    </div>
+                    <div class="badge-list">
+                        <span class="badge">бизнес-план</span>
+                        <span class="badge">прототипирование</span>
+                        <span class="badge">анализ контента</span>
+                    </div>
+                    <div class="job-desc" style="margin-top: 6px;">
+                        <a href="https://docs.google.com/document/d/e/2PACX-1vRhYrhqQpGxyW20pPaIjx0-xI8VUuC9V2wb5LN-IF-sLtETEJv-0jOLWdr7puU8ffuVMiVT8Dkyd2Mq/pub" target="_blank" style="color:#2c5f2d;">пример бизнес-плана</a><br>
+                        <a href="https://langru.tilda.ws/" target="_blank" style="color:#2c5f2d;">образовательный проект LangRu</a>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div><span class="job-title">Менеджер по доставке / планирование</span> • <span class="company">Dostavista</span></div>
+                        <div class="period">ноя 2023 — март 2026 (2 года 5 мес)</div>
+                    </div>
+                    <div class="job-desc">
+                        Сервис курьерской доставки, 100–1000 сотрудников, доставка непродовольственных товаров. Знание Москвы и области, понимание движения товаров, интересов заказчиков.
+                    </div>
+                    <div class="badge-list">
+                        <span class="badge">планирование</span>
+                        <span class="badge">управление рисками</span>
+                        <span class="badge">ведение переговоров</span>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div><span class="job-title">Менеджер по контенту (младший)</span> • <span class="company">Гарант (Legal Tech)</span></div>
+                        <div class="period">сен 2019 — окт 2019 (2 мес)</div>
+                    </div>
+                    <div class="job-desc">
+                        Подготовка e‑mail рассылок, ведение календаря, наполнение сайта.
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div><span class="job-title">Спикер, дизайнер (младший)</span> • <span class="company">digital_no_mads</span></div>
+                        <div class="period">май 2019 — окт 2019 (6 мес)</div>
+                    </div>
+                    <div class="job-desc">
+                        Прошли отборочный тур, организовали команду, создали прототип приложения для взаимодействия пострадавших в ДТП со службой спасения. Финал в Казани.
+                        <div class="badge-list">
+                            <span class="badge">Figma Design</span>
+                            <span class="badge">прототипирование</span>
+                            <span class="badge">разработка интерфейсов</span>
+                        </div>
+                        <a href="https://vk.com/digital_no_mads" target="_blank" style="font-size:0.8rem;">vk.com/digital_no_mads</a>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div><span class="job-title">Менеджер по контенту (младший)</span> • <span class="company">Пульт.ру</span></div>
+                        <div class="period">авг 2018 — апр 2019 (9 мес)</div>
+                    </div>
+                    <div class="job-desc">
+                        Ведение карточек товаров, пакетная обработка изображений (ImageMagick), создание описаний по характеристикам. Ubuntu, GIMP, Bash.
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div><span class="job-title">Верстальщик (средний)</span> • <span class="company">Московский Комсомолец</span></div>
+                        <div class="period">авг 2004 — авг 2015 (11 лет)</div>
+                    </div>
+                    <div class="job-desc">
+                        Верстка газет, журналов, наполнение новостных сайтов, мерч, баннеры. В техотделе (5 человек: два верстальщика, два корректора, наборщица) перевела процесс вычитки и подписания полос с бумаги в электронный вид.
+                    </div>
+                    <div class="badge-list">
+                        <span class="badge">QuarkXPress</span>
+                        <span class="badge">Adobe InDesign</span>
+                        <span class="badge">Corel Draw</span>
+                        <span class="badge">Photoshop</span>
+                        <span class="badge">1С-Битрикс</span>
+                        <span class="badge">Joomla</span>
+                        <span class="badge">Flash</span>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div><span class="job-title">Менеджер техподдержки (лаборант)</span> • <span class="company">СГТУ им. Гагарина</span></div>
+                        <div class="period">март 2000 — авг 2003 (3 года 6 мес)</div>
+                    </div>
+                    <div class="job-desc">
+                        Помощь студентам в освоении графических программ, печать на плоттерах.
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div style="font-size: 0.8rem; color:#7a6e60; text-align: center; margin-top: 0.5rem;">
+                быстро учусь, вовремя забываю — но всегда нахожу нестандартное решение
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
